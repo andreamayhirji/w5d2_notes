@@ -9,9 +9,14 @@ class Pizza {
     //method 1
     // a constructor method will get run fro every new instance of the class when we call new Pizza(); 
     // acts as a default state for new instances
-    constructor() {
+    constructor(size, crust, sauce) {
+        this.size = size;
+        this.crust = crust;
+        this.sauce = sauce;
         this.toppings = ['cheese'];
     }
+
+
 
     //method 2 -- with a property called toppings
     //To add properties to a class, simply use the this keyword followed by the property name, then assign it a value.
@@ -27,17 +32,17 @@ class Pizza {
 //To create a new object from a class, we use the new keyowrd. 
 // pizza1 and pizza2 are pizza objects.
 //when you create a new object from a class it is an instance.
-let pizza1 = new Pizza();
-console.log('base pizza',pizza1.toppings);
+let pizza1 = new Pizza('large', 'thin', 'spicy');
+console.log('base pizza',pizza1.toppings,pizza1.size,pizza1.crust);
 pizza1.addTopping('mushrooms');
 pizza1.addTopping('peppers');
 console.log('new pizza',pizza1.toppings);
 pizza1.removeTopping();
 console.log('remove method', pizza1.toppings);
 
-let pizza2 = new Pizza();
-console.log('base pizza',pizza2.toppings);
-pizza2.addTopping('more cheese');
-console.log('new pizza',pizza2.toppings);
+// let pizza2 = new Pizza();
+// console.log('base pizza',pizza2.toppings);
+// pizza2.addTopping('more cheese');
+// console.log('new pizza',pizza2.toppings);
 
-// console.log(pizza1);
+console.log(pizza1);
