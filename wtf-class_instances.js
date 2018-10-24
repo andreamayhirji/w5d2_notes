@@ -33,16 +33,14 @@ class Pizza {
 // pizza1 and pizza2 are pizza objects.
 //when you create a new object from a class it is an instance.
 let pizza1 = new Pizza('large', 'thin', 'spicy');
-console.log('base pizza',pizza1.toppings,pizza1.size,pizza1.crust);
 pizza1.addTopping('mushrooms');
 pizza1.addTopping('peppers');
-console.log('new pizza',pizza1.toppings);
 pizza1.removeTopping();
-console.log('remove method', pizza1.toppings);
 
-// let pizza2 = new Pizza();
-// console.log('base pizza',pizza2.toppings);
-// pizza2.addTopping('more cheese');
-// console.log('new pizza',pizza2.toppings);
+let pizza2 = new Pizza('small', 'thin', 'mild');
+pizza2.addTopping('more cheese');
+pizza2.addTopping('garlic');
+
 
 console.log(pizza1);
+console.log(pizza2);
