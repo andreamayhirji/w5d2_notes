@@ -5,13 +5,27 @@
 class Person {
 
     //this constructor will be identical for both
-    constructor(name, quirkyFact) {
+    constructor(name, quirkyFact, email) {
         this.name = name;
         this.quirkyFact = quirkyFact;
+        this.email = email;
     }
-    //this will also be identical for both
+    //this method will also be identical for both
     bio() {
-        return `My name is ${this.name} and here's my quirky fact: ${this.quirkyFact}`;
+        return `My name is ${this.name} and here's my quirky fact: ${this.quirkyFact}.`;
+    }
+
+    details() {
+        return `Contact info for ${this.name} \n Email: ${this.email}`
+    }
+
+    //new methods
+    hasBeard() {
+        this.hasBeard = true;
+    }
+
+    noBeard() {
+        this.hasBeard = false; 
     }
 }
 
@@ -40,11 +54,13 @@ class Mentor extends Person {
 
 }
 
-let student1 = new Student('Andrea', 'I won a hotdog eating competition');
+let student1 = new Student('Andrea', 'I won a hotdog eating competition', 'andreamayhirji@gmail.com');
 student1.enroll('September 24');
-console.log(student1);
+student1.noBeard();
+console.log(student1.details());
 
-let mentor1 = new Mentor('Matt', 'I own a goat');
+let mentor1 = new Mentor('Matt', 'I own a goat', "matthirji@gmail.com");
 mentor1.goOnShift();
+mentor1.hasBeard();
 mentor1.yearsOfExperience(5);
-console.log(mentor1);
+console.log(mentor1.details());
