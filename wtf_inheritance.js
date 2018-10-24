@@ -52,15 +52,24 @@ class Mentor extends Person {
         this.years = years;
     }
 
+    //method override, the superclass already contains this method and this subclass is going to override it.
+    bio() {
+        return `I'm a mentor at LHL. My name is ${this.name} and here's my quirky fact: ${this.quirkyFact}.`;
+    }
+
+
 }
 
 let student1 = new Student('Andrea', 'I won a hotdog eating competition', 'andreamayhirji@gmail.com');
 student1.enroll('September 24');
 student1.noBeard();
+console.log(student1.bio());
 console.log(student1.details());
 
 let mentor1 = new Mentor('Matt', 'I own a goat', "matthirji@gmail.com");
 mentor1.goOnShift();
 mentor1.hasBeard();
 mentor1.yearsOfExperience(5);
+console.log(mentor1.bio());
 console.log(mentor1.details());
+
