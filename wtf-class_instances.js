@@ -1,7 +1,7 @@
 // declare a class using the class keyword
 // this will help us create a bunch of pizza objects.
 
-//We can use any name for the class but a class name should always be a noun, and the first letter should always be capitalized.
+// We can use any name for the class but a class name should always be a noun, and the first letter should always be capitalized.
 
 
 class Pizza {
@@ -27,7 +27,23 @@ class Pizza {
     removeTopping(topping) {
         this.toppings.pop(topping);
     }
+
+    get price() {
+        const basePrice = 10;
+        const toppingPrice = 2;
+        return basePrice + (this.toppings.length * toppingPrice);
+    }
+
+    set size(size) {
+        // add some parameters to the size data that can be used
+        if (size === 's' || size === 'm' || size === 'lg') {
+            this.size = size;
+        }
+        // else we could throw an error, return false, etc.
+        // We choose here to ignore all other values!
+    }
 }
+
 
 //To create a new object from a class, we use the new keyowrd. 
 // pizza1 and pizza2 are pizza objects.
@@ -41,6 +57,10 @@ let pizza2 = new Pizza('small', 'thin', 'mild');
 pizza2.addTopping('more cheese');
 pizza2.addTopping('garlic');
 
+const pizza3 = new Pizza('small', 'thin', 'spicy');
+pizza3.price;
+pizza3.size = 's';
 
-console.log(pizza1);
-console.log(pizza2);
+// console.log(pizza1);
+// console.log(pizza2);
+console.log(pizza3);
