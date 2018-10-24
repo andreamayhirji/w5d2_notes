@@ -37,6 +37,10 @@ class Student extends Person {
     enroll(cohort) {
         this.cohort = cohort;
     }
+
+    bio() {
+        return `I'm a student at Lighthouse Labs (aka Labber). ${super.bio()}`;
+    }
 }
 
 class Mentor extends Person {
@@ -53,8 +57,9 @@ class Mentor extends Person {
     }
 
     //method override, the superclass already contains this method and this subclass is going to override it.
+    //lets use SUPER keyword to make this code DRY.
     bio() {
-        return `I'm a mentor at LHL. My name is ${this.name} and here's my quirky fact: ${this.quirkyFact}.`;
+        return `I'm a mentor at LHL. ${super.bio()}`;
     }
 
 
